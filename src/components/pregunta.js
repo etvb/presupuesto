@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Pregunta = () => {
   
   const [ cantidad, setCantidad ] = useState(0);
+  const [error, setError] = useState(false); //maneja la validacion si el error es false se manda el presupuesto
 
   const handChange = (e) => {
     setCantidad(parseInt(e.target.value));
@@ -10,9 +11,12 @@ const Pregunta = () => {
 
   const agregarPresupuesto = (e) => {
     e.preventDefault();
-    console.log('ho')
 
-
+    if(cantidad < 1 || isNaN(cantidad)){
+      setError(true);
+      return;
+    }
+    setError(false);
   }
 
 
