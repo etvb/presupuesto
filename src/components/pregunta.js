@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import toastr from 'toastr';
+import 'toastr/build/toastr.css';
 
 const Pregunta = () => {
   
@@ -14,9 +16,12 @@ const Pregunta = () => {
 
     if(cantidad < 1 || isNaN(cantidad)){
       setError(true);
+      toastr.error('El valor tienen que ser mayor de 0 y solo numeros');
       return;
     }
     setError(false);
+    toastr.success('Valor agregado correctamente');
+
   }
 
 
