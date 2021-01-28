@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-
+import toastr from 'toastr';
+import 'toastr/build/toastr.min.css';
 const Formulario = () => {
 
   const [nombre, setNombre] = useState('');
   const [cantidad, setCantidad] = useState(0);
+  const [error, setError] = useState(false);
+
+
 
   function handNombre(e) {
     setNombre(e.target.value)
@@ -13,9 +17,37 @@ const Formulario = () => {
     setCantidad( parseInt(e.target.value));
   }
 
+  const numRandom = () => {
+    //Make a random number
+    return Math.floor(Math.random() * (10000 - 0)) + 0;
+  }
+
+  function pasarGasto(e) {
+    e.preventDefault();
+    // validar
+    if(cantidad < 1 || isNaN(cantidad) || nombre.trim()===''){
+      setError(true);
+      toastr.error('ambos campos son obligatorios')
+      return
+    }
+    setError(false);
+
+    //construir objeto 
+
+    const gasto = {
+      id: numRandom(),
+      nombre: nombre ,
+      cantidad: cantidad
+    }
+
+    console.log(gasto)
+
+
+  }
+
   return(
     <>
-      <form>
+      <form onSubmit={pasarGasto}>
         <label className="d-block font-weight-bold">Nombre Gasto
           <input type="text" className="d-block w-100" value={nombre} onChange={handNombre} />
         </label>

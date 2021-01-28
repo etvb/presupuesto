@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import toastr from 'toastr';
-import 'toastr/build/toastr.css';
 
 
 const Pregunta = ({setPresupuesto, setResto}) => {

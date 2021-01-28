@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Pregunta from './components/Pregunta';
 // import Formulario from './components/Formulario';
 import Formulario2 from './components/Formulario2';
+// import 'toastr/build/toastr.min.css';
 
 
 

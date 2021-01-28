@@ -5,7 +5,8 @@ import App from './App';
 // import $ from 'jquery';
 // import Popper from 'popper.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import toastr from 'toastr';
+
+import './toastr.min.css';
 
 // import reportWebVitals from './reportWebVitals';
 
