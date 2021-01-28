@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import toastr from 'toastr';
 import 'toastr/build/toastr.css';
 
-const Pregunta = () => {
+
+const Pregunta = ({setPresupuesto, setResto}) => {
   
   const [ cantidad, setCantidad ] = useState(0);
   const [error, setError] = useState(false); //maneja la validacion si el error es false se manda el presupuesto
@@ -21,6 +22,8 @@ const Pregunta = () => {
     }
     setError(false);
     toastr.success('Valor agregado correctamente');
+    setPresupuesto(cantidad);
+    setResto(cantidad);
 
   }
 
