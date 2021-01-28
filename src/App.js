@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Pregunta from './components/Pregunta';
-import Formulario from './components/Formulario';
+// import Formulario from './components/Formulario';
+import Formulario2 from './components/Formulario2';
+
 
 
 
@@ -25,7 +27,9 @@ function App() {
       <div class="row justify-content-center">
         <div className="col-sm-6 border">
           <h2 className="text-center">skjflkasj</h2>
-          <Formulario />
+          {/* <Formulario /> */}
+          <Formulario2 />
+
         </div>
         <div className="col-sm-6 border">
           <h2 className="text-center" >wjfpow</h2>
