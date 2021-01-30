@@ -2,15 +2,23 @@ import React, { useState } from 'react';
 import Pregunta from './components/Pregunta';
 // import Formulario from './components/Formulario';
 import Formulario2 from './components/Formulario2';
+import Listado from './components/Listado';
 // import 'toastr/build/toastr.min.css';
+
 
 
 
 
 function App() {
 
-  const [presupuesto, setPresupuesto] = useState()
-  const [resto, setResto] = useState()
+  const [presupuesto, setPresupuesto] = useState();
+  const [resto, setResto] = useState();
+  const [gastos, setGastos] = useState([]);
+
+  function agregarNuevoGasto(gasto) {
+    
+    setGastos([...gastos, gasto]);
+  }
 
   return (
     <>
@@ -29,12 +37,16 @@ function App() {
         <div className="col-sm-6 border">
           <h2 className="text-center">skjflkasj</h2>
           {/* <Formulario /> */}
-          <Formulario2 />
+          <Formulario2
+            agregarNuevoGasto={agregarNuevoGasto}          
+          />
 
         </div>
         <div className="col-sm-6 border">
           <h2 className="text-center" >wjfpow</h2>
-
+          <Listado
+            gastos={gastos}
+          />
         </div>
 
       </div>

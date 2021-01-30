@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
-const Formulario = () => {
+
+
+const Formulario = ({agregarNuevoGasto}) => {
 
   const [nombre, setNombre] = useState('');
   const [cantidad, setCantidad] = useState(0);
@@ -40,7 +42,11 @@ const Formulario = () => {
       cantidad: cantidad
     }
 
-    console.log(gasto)
+    agregarNuevoGasto(gasto);
+    // console.log(gasto)
+
+    setNombre ('');
+    setCantidad(0);
 
 
   }
