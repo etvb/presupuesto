@@ -17,7 +17,6 @@ const Listado = ({gastos}) => {
 
         }
       </div>
-      {console.log(gastos)}
     </>
   );
 } 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import toastr from 'toastr';
 
 
-const Pregunta = ({setPresupuesto, setResto}) => {
+const Pregunta = ({setPresupuesto, setResto, setOcultarLista}) => {
   
   const [ cantidad, setCantidad ] = useState(0);
   const [error, setError] = useState(false); //maneja la validacion si el error es false se manda el presupuesto
@@ -20,6 +20,7 @@ const Pregunta = ({setPresupuesto, setResto}) => {
       return;
     }
     setError(false);
+    setOcultarLista(false);
     toastr.success('Valor agregado correctamente');
     setPresupuesto(cantidad);
     setResto(cantidad);
@@ -31,7 +32,7 @@ const Pregunta = ({setPresupuesto, setResto}) => {
     <>
 
     <form 
-      className="w-100 border text-center"
+      className="w-100 border text-center p-2"
       onSubmit={agregarPresupuesto}
     >
       <input
