@@ -3,7 +3,7 @@ import toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
 
 
-const Formulario = ({agregarNuevoGasto}) => {
+const Formulario = ({setGasto}) => {
 
   const [nombre, setNombre] = useState('');
   const [cantidad, setCantidad] = useState(0);
@@ -42,7 +42,7 @@ const Formulario = ({agregarNuevoGasto}) => {
       cantidad: cantidad
     }
 
-    agregarNuevoGasto(gasto);
+    setGasto(gasto);
     // console.log(gasto)
 
     setNombre ('');
